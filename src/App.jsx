@@ -104,7 +104,7 @@ function App() {
   const handleCloseModal = () => setShowModal(false);
 
   return (
-    <div className="w-100 h-100 d-flex flex-column align-items-center">
+    <div className="h-100 d-flex flex-column align-items-center">
       <div className="navbar">
         <h3>Expense Dashboard</h3>
       </div>
