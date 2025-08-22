@@ -1,0 +1,271 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+  height: 100vh;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.navbar {
+  width: 100%;
+  min-height: 60px;
+  margin-bottom: 1rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #EEEEEE;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.navbar h3 {
+  margin-left: 1rem;
+  margin-bottom: 0;
+  color: #333;
+}
+
+.footer {
+  width: 100%;
+  min-height: 60px;
+  bottom: 0;
+  margin-top: 1rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #EEEEEE;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter label {
+  text-wrap: nowrap;
+}
+
+.filter input {
+  background-color: #F4CE14; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  padding: 0.5rem 1rem; 
+  font-size: 1rem; 
+  width: 100%; 
+  box-sizing: border-box; 
+  transition: all 0.3s ease; 
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.filter input:focus {
+  outline: none; 
+  border-color: #d3b68d; 
+  background-color: #f3e0b5; 
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 2px 5px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}
+
+.filter select {
+  background-color: #F4CE14;
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  padding: 0.5rem 1rem; 
+  font-size: 1rem; 
+  width: 100%; 
+  box-sizing: border-box; 
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* เมื่อโฟกัส */
+.filter select:focus {
+  outline: none;
+  border-color: #d3b68d;
+  background-color: #f3e0b5;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 2px 5px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}
+
+.filter-icon {
+  display: none;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.dashboard-table {
+  width: 50%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-wrap: nowrap;
+  margin-bottom: 1rem;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  border: 1px solid #faf9ee;
+  padding: 5px;
+}
+
+.dashboard-table th {
+  background-color: #44bc5c;
+  text-align: center;
+}
+
+.dashboard-table tr:hover {
+  background-color: #faf9ee;
+}
+
+@media screen and (max-width: 768px) {
+
+  .filter label,
+  .filter input,
+  .filter select {
+    font-size: 0.7rem;
+  }
+
+  .dashboard-table thead {
+    font-size: 1rem;
+    text-wrap: nowrap;
+  }
+
+  .dashboard-table tbody {
+    font-size: 0.7rem;
+  }
+}
+
+/* ปุ่มลบแบบมีมิติ */
+.delete-butt {
+  /* พื้นหลังไล่เฉดให้ดูนูน */
+  --c1: #dc3545; /* danger */
+  --c2: #b02a37; /* darker */
+  background: linear-gradient(180deg, var(--c1) 0%, var(--c2) 100%);
+  color: #fff;
+
+  /* รูปทรง/ขนาด */
+  border: none;
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  letter-spacing: 0.2px;
+
+  /* เงาด้านนอก + เงาด้านในให้ดูนูน */
+  box-shadow: 0 8px 16px rgba(220, 53, 69, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
+  /* แอนิเมชันเวลาโต้ตอบ */
+  transform: translateY(0);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+/* โฮเวอร์: ลอยขึ้นนิดๆ + เงาชัดขึ้น */
+.delete-butt:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(220, 53, 69, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  filter: brightness(1.03);
+}
+
+/* ตอนกด: ยุบลง + มีเงาด้านใน */
+.delete-butt:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3),
+    inset 0 3px 8px rgba(0, 0, 0, 0.25);
+  filter: brightness(0.96);
+}
+
+/* โฟกัส: วงแหวนเน้นการเข้าถึง */
+.delete-butt:focus-visible {
+  outline: 3px solid rgba(220, 53, 69, 0.35);
+  outline-offset: 2px;
+}
+
+/* ไอคอนในปุ่ม (ถ้ามี) ให้ขยับเล็กน้อยตอนโฮเวอร์ */
+.delete-butt .icon {
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease;
+}
+.delete-butt:hover .icon {
+  transform: scale(1.05);
+}
+
+/* ปิดการใช้งาน */
+.delete-butt:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.add-butt {
+  background-color: #F4CE14; /* สีพื้นหลัง */
+  color: black; /* ตัวอักษรสีขาว */
+  border: none; /* ไม่มีกรอบ */
+  border-radius: 8px; /* มุมโค้ง */
+  padding: 0.8rem 1.5rem; /* ขนาด padding */
+  font-size: 1rem; /* ขนาดฟอนต์ */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็น pointer เมื่อวางเมาส์ */
+  transition: all 0.3s ease; /* เพิ่มแอนิเมชัน */
+  
+  /* เงาเบา ๆ ให้ดูนูน */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.add-butt:hover {
+  background-color: #FFE100; /* เปลี่ยนสีเมื่อ hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* เพิ่มเงาชัดขึ้น */
+}
+
+.add-butt:active {
+  transform: scale(0.98); /* กดแล้วทำให้ปุ่มยุบลงเล็กน้อย */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* เงาเบา ๆ ตอนกด */
+}
+
+.add-butt:focus {
+  outline: none; /* ลบกรอบ focus */
+  border: 2px solid #FFE100; /* เพิ่มกรอบเบา ๆ ตอน focus */
+}
