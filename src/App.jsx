@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -22,6 +22,15 @@ function App() {
   const [sortDirection, setSortDirection] = useState("asc");
 
   const [showModal, setShowModal] = useState(false);
+
+  const totalPrice = useMemo(
+    () =>
+      filteredExpenses.reduce((sum, e) => {
+        const v = typeof e.price === "string" ? parseFloat(e.price) : e.price;
+        return sum + (Number.isFinite(v) ? v : 0);
+      }, 0),
+    [filteredExpenses]
+  );
 
   const navigate = useNavigate();
 
@@ -192,6 +201,13 @@ function App() {
             ))}
           </tbody>
         </table>
+        <div className="p-3 fw-bold">
+          Total Price:{" "}
+          {totalPrice.toLocaleString("th-TH", {
+            style: "currency",
+            currency: "THB",
+          })}
+        </div>
         <button className="add-butt" onClick={handleShowModal}>
           Add Expense <FaMoneyBill1Wave />
         </button>
